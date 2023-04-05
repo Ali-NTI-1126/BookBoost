@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import logo from "./icons/bookboost.png";
 import logout from "./icons/logout2.png";
 
-function App() {
+function FacilityManagerPage() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [campaignInfo, setCampaignInfo] = useState(null);
   const [showCampaignInfo, setShowCampaignInfo] = useState(false);
-  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -46,20 +45,6 @@ function App() {
     };
   };
 
-  
-  const handleLogout = () => {
-    setShowConfirmation(true);
-  };
-
-  const handleConfirmLogout = () => {
-    // perform the logout action here
-    setShowConfirmation(false);
-  };
-
-  const handleCancelLogout = () => {
-    setShowConfirmation(false);
-  };
-
   return (
 <div className="flex h-screen">
   <div className="w-20 bg-[#313e4d]">
@@ -68,34 +53,12 @@ function App() {
         <img src={logo} alt="Logo" className="w-2/3 mx-auto" />
       </li>
       <li className="flex-grow-0 mt-auto">
-        <button onClick={handleLogout}>
+        <button>
           <img src={logout} alt="logout" className="w-[56%] mx-auto" />
         </button>
       </li>
     </ul>
   </div>
-
-  
-      {/* Confirmation Modal */}
-      {showConfirmation && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-500 bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg">
-            <p className="text-lg font-medium mb-2">Are you sure you want to logout?</p>
-            <div className="flex justify-center">
-  <button onClick={handleConfirmLogout} className="px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 focus:outline-none focus:bg-red-600 mr-2">
-    <a href="/" className="hover:text-white focus:text-white">
-      Yes
-    </a> 
-  </button>
-  <button onClick={handleCancelLogout} className="px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:bg-gray-500">
-    No
-  </button>
-</div>
-
-
-            </div>
-        </div>
-      )}
 
   <div className="w-2/5 bg-gray-100 relative">
     <p className="text-2xl mx-3.5 my-2.5 text-gray-800 font-medium">
@@ -140,7 +103,7 @@ function App() {
           <h2 className="text-2xl font-normal text-[#313e4d] mr-3.5">Create Campaign</h2>
           <form onSubmit={handleCreateCampaign}>
           <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" for="title">
+        <label className="block text-gray-700 font-bold mb-2" htmlFor="title">
           Title
         </label>
         <input
@@ -153,7 +116,7 @@ function App() {
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" for="description">
+        <label className="block text-gray-700 font-bold mb-2" htmlFor="description">
           Description
         </label>
         <textarea
@@ -166,7 +129,7 @@ function App() {
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" for="pictures">
+        <label className="block text-gray-700 font-bold mb-2" htmlFor="pictures">
           Image
         </label>
         <input
@@ -179,15 +142,15 @@ function App() {
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" for="category">
+        <label className="block text-gray-700 font-bold mb-2" htmlFor="category">
           Category
         </label>
-        <div className="flex flex-wrap justify-center items-center">
+        <div className="flex flex-wrap">
           {categories.map((category, index) => (
             <div
               key={index}
-              className={`bg-[#d8dfe7] rounded-2xl py-1 px-3 mr-2 mb-2 cursor-pointer ${
-                selectedCategory === category ? "bg-[#529ff8] text-[white]  " : "text-[#313e4d]"
+              className={`bg-[#d8dfe7] rounded-md py-1 px-3 mr-2 mb-2 cursor-pointer ${
+                selectedCategory === category ? "bg-[#313e4d] text-[white] font-semibold" : "text-[#313e4d]"
               }`}
               onClick={() => handleCategoryClick(category)}
             >
@@ -198,7 +161,7 @@ function App() {
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" for="datetime">
+        <label className="block text-gray-700 font-bold mb-2" htmlFor="datetime">
           Date and Time
         </label>
         <input
@@ -229,4 +192,4 @@ function App() {
 );
 }
 
-export default App;
+export default FacilityManagerPage;
