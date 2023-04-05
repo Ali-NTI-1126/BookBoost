@@ -1,0 +1,466 @@
+  
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-height: 85px;
+    padding-bottom: 40px;
+    padding: 1rem 1.5rem; 
+
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 100px;
+    margin-right: 1rem;
+  }
+  
+  
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+ 
+  
+  .header-nav a {
+    text-decoration: none;
+    margin-right: 1rem; 
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.header-nav a:hover{
+    color: purple; 
+    transform: translateY(-5px); 
+    transition: all 0.3s ease-out;
+
+}
+
+
+
+  .header-right {
+    margin-top: 15px;
+}
+  
+
+  
+    .login-btn {
+      position: relative;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      font-size: 1.2rems;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: linear-gradient(to right, #7644C0, purple);
+      border-radius: 30px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+    
+    .login-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: #fff;
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+      transition: all 0.5s ease;
+    }
+    
+    .login-btn:hover {
+      animation: pulse 1s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    
+  
+  .search-container {
+    background-image: url('https://wallpaperaccess.com/full/210985.jpg');
+    
+    background-size: cover;/*1300px 400px;*/
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    height: 350px; 
+    padding: 3rem 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 3rem 1.5rem; 
+
+  }
+  
+  .search-form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .search-form {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 200px;
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 30px;
+    
+  }
+  
+  .form-group:last-child {
+    margin-right: 0;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    
+  }
+  
+  .form-group select,
+  .form-group input[type="date"],
+  .form-group input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .form-group select:hover{
+    border: 2px solid #7644C0;
+
+  }
+
+  .form-group input:hover{
+    border: 2px solid #7644C0;
+
+  }
+
+  
+  .form-group button {
+    background-color: #7644C0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 45px;
+  }
+  
+  
+  .recommended-destinations-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .recommended-destinations-container a:hover{
+    text-decoration: underline #7644C0;
+  }
+
+  .content {
+    flex: 1;
+  }
+  
+  .image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .recommendedImage {
+    max-width: 95%;
+    max-height: 100%;
+  }
+  
+
+  .heading {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+  }
+  
+
+footer {
+    font-size: 14px;
+    padding: 40px 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color:#fff;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+
+  }
+  
+  .footer-menu ul,
+  .hotel-categories ul,
+  .popular-destinations ul,
+  .social-media ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .footer-menu li,
+  .hotel-categories li,
+  .popular-destinations li,
+  .social-media li {
+    margin-bottom: 10px;
+    margin-left: 0.2rem;
+  }
+  
+
+.footer-menu a,
+.hotel-categories a,
+.popular-destinations a,
+.social-media a {
+color: black;
+text-decoration: none;
+}
+
+.footer-menu a:hover,
+.hotel-categories a:hover,
+.popular-destinations a:hover,
+.social-media a:hover {
+text-decoration: underline;
+color: #7644C0;
+
+}
+
+.contact-information p {
+margin-bottom: 10px;
+color: #333;
+}
+
+.contact-information p:hover {
+    color: #7644C0;
+}
+
+
+.social-media ul {
+display: flex;
+color: #333;
+
+}
+
+.social-media li {
+margin-right: 10px;
+color: #333;
+}
+
+.social-media a {
+display: inline-block;
+width: 30px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+color: #fff;
+background-color: #333;
+border-radius: 50%;
+transition: background-color 0.2s ease;
+}
+
+.social-media a:hover {
+color: #7644C0;
+}
+
+.footer-bottom {
+text-align: center;
+margin-top: 30px;
+color: #333;
+}
+
+.footer-bottom p {
+margin-bottom: 0;
+}
+
+h3{
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Fontawesome icons */
+.fab {
+font-size: 15px;
+vertical-align: middle;
+}
+
+.footerLogo{
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+  
+
+ 
+  .recommended-destinations-container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .recommended-destinations-container.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .nav-link {
+    transition: all 0.3s ease-out;
+  }
+  
+  .nav-link:hover {
+    color: #ff8c00; 
+    transform: translateY(-5px); 
+  }
+
+  .hamburger-menu {
+    display: none; /* Hide the button on large screens */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 6px auto;
+    background-color: #333;
+    transition: transform 0.2s ease-out;
+  }
+  
+  /* Rotate the top and bottom bars to create the "X" shape */
+  .bar:first-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+  .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .bar:last-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .header-nav {
+      display: none; /* Hide the navigation menu on small screens */
+    }
+    
+    .hamburger-menu {
+      display: block; /* Show the hamburger button on small screens */
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1;
+    }
+    
+    /* When the hamburger button is clicked, show the navigation menu */
+    .hamburger-menu.active ~ .header-nav {
+      display: block;
+    }
+    
+    /* Rotate the hamburger icon to create the "X" shape */
+    .hamburger-menu.active .bar:first-child {
+      transform: translateY(0px) rotate(45deg);
+    }
+    .hamburger-menu.active .bar:nth-child(2) {
+      opacity: 1;
+    }
+    .hamburger-menu.active .bar:last-child {
+      transform: translateY(0px) rotate(-45deg);
+    }
+    .header {
+      flex-direction: column;
+      max-height: none;
+    }
+    
+    .header-left {
+      margin-bottom: 1rem;
+    }
+    
+    .logo {
+      margin-right: 0;
+    }
+    
+    .header-nav {
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+    
+    .header-nav a {
+      margin-right: 0;
+      padding: 0.5rem 1rem;
+    }
+    
+    .login-btn {
+      margin-top: 1rem;
+    }
+    
+    .search-container {
+      margin: 2rem 0;
+      border-radius: 0;
+    }
+    
+    .search-form {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .form-group {
+      margin-bottom: 2rem;
+      padding: 1rem;
+    }
+    
+    .recommended-destinations-container {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  }
+  
+
+  
+  
