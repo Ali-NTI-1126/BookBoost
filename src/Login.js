@@ -6,17 +6,18 @@ import './loginForm.css';
 import logo from './icons/BB.png';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useHistory } from 'react-router-dom';
 
 const LoginForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  
+  const [error, setError] = useState(null);
+  const history = useHistory();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -26,26 +27,53 @@ const LoginForm = () => {
       email: Yup.string().email('Invalid email address').required('Email is required'),
       password: Yup.string().required('Password is required'),
     }),
+
     onSubmit: async (values, { resetForm }) => {
       setSubmitting(true);
-      console.log(values);
+      setError(null);
 
       try {
-        const response = await fetch('http://example.com/login', {
+        const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(values)
         });
         const data = await response.json();
+        if (response.ok) {
+          console.log(data);
 
-        console.log('Login successful:', data);
-        resetForm();
+          switch (data.role) {
+            case 'admin':
+              history.push('/admin');
+              window.location.href = '/admin';
+              break;
+            case 'hotel admin':
+              history.push('/hotel-admin');
+              window.location.href = '/hotel-admin';
+              break;
+            case 'facility manager':
+              history.push('/facility');
+              window.location.href = '/facility';
+              break;
+            case 'guest':
+              history.push('/');
+              window.location.href = '/';
+              break;
+            default:
+              console.error('Invalid role');
+          }
+        } else {
+          throw new Error('Invalid email or password');
+        }
       } catch (error) {
         console.error('Login failed:', error);
+        setError('Invalid email or password');
       }
+      
 
+      resetForm();
       setSubmitting(false);
-    },
+    }
   });
 
   const disableButton = submitting || !formik.isValid;
@@ -85,6 +113,10 @@ const LoginForm = () => {
       value={formik.values.password}
       invalid={formik.touched.password && formik.errors.password}
     />
+    {error && (
+    <div className="text-danger">{error}</div>
+    )}
+
     <div
       className="password-toggle-icon"
       onClick={() => setShowPassword(!showPassword)}

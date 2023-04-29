@@ -47,8 +47,10 @@
 
 
   .header-right {
-    margin-top: 15px;
-}
+    padding: 10px 10px;
+    display: flex;
+    text-align: center;
+  }
   
 
   
@@ -95,6 +97,18 @@
       }
     }
     
+    .signup-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #7644C0;
+      cursor: pointer;
+    }
+    
+    .signup-btn:hover {
+      text-decoration: underline#7644C0;
+    }
     
   
   .search-container {

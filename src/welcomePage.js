@@ -55,6 +55,7 @@ function WelcomePage() {
         </div>
         <div class="header-right">
           <a href="login" class="login-btn"><i class="fa-solid fa-circle-user"></i> Login</a>
+          <a href="register" class="signup-btn">Sign up</a>
         </div>
       </header>
       <div class="search-container">
@@ -98,9 +99,9 @@ function WelcomePage() {
 
         <br></br>
 
-        <div class={`recommended-destinations-container ${
-  destinationsVisible[0] ? 'fade-in' : ''
-}`}>  <div class="content">
+        <div class={`recommended-destinations-container ${destinationsVisible[0] ? 'fade-in' : ''
+        }`}>  
+    <div class="content">
     <h2 class='heading'>Recommended destinations</h2>
     <p>
    <a href='https://malmo.se/Welcome-to-Malmo/Visit-Malmo.html' target={'_blank'}> <b>Malmö</b></a>, located in the southernmost part of Sweden, offers an alluring combination 

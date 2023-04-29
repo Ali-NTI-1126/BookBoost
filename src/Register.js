@@ -7,50 +7,62 @@ import './RegistrationForm.css';
 import logo from './icons/BB.png';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import { useHistory } from 'react-router-dom';
+
 
 const RegistrationForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showLogin, setShowLogin] = useState(false);
+  const history = useHistory();
 
   const formik = useFormik({
     initialValues: {
       name: '',
       email: '',
       password: '',
+      phone: '',
     },
     validationSchema: Yup.object({
       name: Yup.string().required('Name is required'),
       email: Yup.string().email('Invalid email address').required('Email is required'),
       password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+      phone: Yup.string().required('Phone number is required'),
     }),
     onSubmit: async (values, { resetForm }) => {
       setSubmitting(true);
       console.log(values);
-
+    
       try {
-        const response = await fetch('http://example.com/register', {
+        const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(values)
         });
         const data = await response.json();
-
+    
         console.log('Registration successful:', data);
         resetForm();
+        window.location.href = '/welcome';
+        history.push('/welcome'); 
       } catch (error) {
         console.error('Registration failed:', error);
       }
-
+    
       setSubmitting(false);
     },
+    
+    
   });
 
   const disableButton =
   submitting ||
   !formik.isValid ||
   confirmPassword !== formik.values.password;
+
 
   const handleLoginClick = () => {
     setShowLogin(true);
@@ -59,6 +71,7 @@ const RegistrationForm = () => {
   if (showLogin) {
     return <Login />;
   }
+    
   
   return (
     <div className='body'> 
@@ -98,6 +111,26 @@ const RegistrationForm = () => {
             <div className="text-danger">{formik.errors.email}</div>
           )}
 
+          <FormGroup>
+          <Label htmlFor="phone">Phone</Label>
+          <PhoneInput
+          id="phone"
+          name="phone"
+          country={'se'}
+          value={formik.values.phone}
+          onChange={(phone) => formik.setFieldValue('phone', phone)}
+          onBlur={formik.handleBlur}
+    
+          />
+          {formik.touched.phone && formik.errors.phone && (
+          <div className="text-danger">{formik.errors.phone}</div>
+          )}
+          </FormGroup>
+
+
+        <br></br>
+
+
         <FormGroup>
          <Label htmlFor="password">Password</Label>
          <div className="password-input">
@@ -123,8 +156,8 @@ const RegistrationForm = () => {
       <Label htmlFor="confirmPassword">Confirm Password</Label>
       <Input
     type="password"
-    id="confirmPassword"
-    name="confirmPassword"
+    id="password_confirmation"
+    name="password_confirmation"
     placeholder="Confirm your password"
     onChange={(e) => {
       formik.handleChange(e);
