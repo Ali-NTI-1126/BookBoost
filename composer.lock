@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "121ea3a2fffe49b3ef9aa4d064b28c19",
+    "content-hash": "3a72fa0ce225eade5d3f0172527f7eed",
     "packages": [
         {
             "name": "brick/math",
@@ -432,6 +432,116 @@
                 }
             ],
             "time": "2023-01-14T14:17:03+00:00"
+        },
+        {
+            "name": "elastic-email/web-api-client",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ElasticEmail/ElasticEmail.WebApiClient-php.git",
+                "reference": "76dbb57502fe27a4271e1b5d4bdddc14fd2d5450"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ElasticEmail/ElasticEmail.WebApiClient-php/zipball/76dbb57502fe27a4271e1b5d4bdddc14fd2d5450",
+                "reference": "76dbb57502fe27a4271e1b5d4bdddc14fd2d5450",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ElasticEmail": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ElasticEmail Dev Team",
+                    "email": "support@elasticemail.com",
+                    "homepage": "https://elasticemail.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily send emails with Elastic Email using Web API PHP Client https://elasticemail.com/",
+            "homepage": "https://github.com/ElasticEmail/ElasticEmail.WebApiClient-php",
+            "keywords": [
+                "api",
+                "elastic",
+                "elasticemail",
+                "email",
+                "transactional",
+                "web"
+            ],
+            "support": {
+                "issues": "https://github.com/ElasticEmail/ElasticEmail.WebApiClient-php/issues",
+                "source": "https://github.com/ElasticEmail/ElasticEmail.WebApiClient-php/tree/master"
+            },
+            "time": "2017-11-22T08:36:58+00:00"
+        },
+        {
+            "name": "elasticemail/elasticemail-php",
+            "version": "4.0.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ElasticEmail/elasticemail-php.git",
+                "reference": "7e9c5d17cce55424c50f0be1bf1cd91726448e3b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ElasticEmail/elasticemail-php/zipball/7e9c5d17cce55424c50f0be1bf1cd91726448e3b",
+                "reference": "7e9c5d17cce55424c50f0be1bf1cd91726448e3b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "^7.3",
+                "guzzlehttp/psr7": "^1.7 || ^2.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.12",
+                "phpunit/phpunit": "^8.0 || ^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ElasticEmail\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "Elastic Email",
+                    "homepage": "https://elasticemail.com"
+                }
+            ],
+            "description": "The C# library for the Elastic Email REST API. This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach. To start using this API, you will need your Access Token. Remember to keep it safe.",
+            "homepage": "https://elasticemail.com",
+            "keywords": [
+                "api",
+                "openapi",
+                "openapi-generator",
+                "openapitools",
+                "php",
+                "rest",
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/ElasticEmail/elasticemail-php/issues",
+                "source": "https://github.com/ElasticEmail/elasticemail-php/tree/4.0.21"
+            },
+            "time": "2022-11-29T11:38:11+00:00"
         },
         {
             "name": "fruitcake/php-cors",
