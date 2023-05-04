@@ -1,10 +1,12 @@
  import React, { useState } from "react";
  import logo from "./icons/bookboost.png";
  import logout from "./icons/logout2.png";
+ import './page1.css'; 
+
 
  function admin() {
    const [currentPage, setCurrentPage] = useState(1);
-   const [rowsPerPage] = useState(7);
+   const [rowsPerPage] = useState(6);
    const [rows, setRows] = useState([]);
    const [latestHotelName, setLatestHotelName] = useState("");
    const [showConfirmation, setShowConfirmation] = useState(false);
@@ -67,8 +69,8 @@
             <a href="/"> <img src={logo} alt="Logo" className="w-2/3 mx-auto" /></a>
            </li>
            <li className="flex-grow-0 mt-auto">
-             <button onClick={handleLogout}>
-               <img src={logout} alt="logout" className="w-[56%] mx-auto" />
+             <button onClick={handleLogout} class="logoutbutton">
+               <img src={logout} alt="logout"  />
              </button>
            </li>
          </ul>
@@ -121,13 +123,13 @@
        <div className="w-full bg-[#d8dfe7]">
    <div className="flex items-center mx-3.5 my-2.5">
      <p className="text-2xl font-normal text-[#313e4d] mr-3.5">Hotels</p>
-     <div className="flex items-center bg-white rounded-lg shadow-sm  ml-[60%]">
+     <div className="flex items-center rounded-lg  ml-[60%]">
        <input
          type="text"
          placeholder="Search by Name"
          value={searchQuery}
          onChange={handleSearchQuery}
-         className="px-3 py-2 bg-transparent outline-none"
+         class="serachinput"
        />
        {/* <button className="flex items-center justify-center px-4 text-gray-400 hover:text-gray-500">
          <SearchIcon className="h-5 w-5" />
@@ -171,14 +173,14 @@
        </table>
      </div>
 
-     <div className="flex items-center justify-end mt-3 space-x-2 text-gray-700 absolute bottom-2 mx-[40%] mb-[10.5rem]">
-   <button
+     <div class="divselect">
+   <button1
      className={`px-3 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : 'hover:bg-blue-500 hover:text-white'}`}
      disabled={currentPage === 0}
      onClick={() => setCurrentPage(currentPage - 1)}
    >
      Previous
-   </button>
+   </button1>
    {pageNumbers.map((number) => {
      if (
        number === 1 ||
@@ -186,7 +188,7 @@
        (number >= currentPage - 1 && number <= currentPage + 1)
      ) {
        return (
-         <button
+         <button1
            key={number}
            className={`px-3 py-2 text-sm font-medium text-blue-500 bg-white border border-gray-300 rounded ${currentPage === number ? 'bg-blue-500' : 'hover:bg-blue-500 hover:text-white'}`}
            onClick={() => setCurrentPage(number)}
@@ -194,7 +196,7 @@
            style={{ fontWeight: currentPage === number ? 'bold' : 'normal' }}
          >
            {number}
-         </button>
+         </button1>
        );
      }
      if (
@@ -209,48 +211,48 @@
      }
      return null;
    })}
-   <button
+   <button1
      className={`px-3 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded ${currentPage === Math.ceil(rows.length / rowsPerPage) ? 'cursor-not-allowed opacity-50' : 'hover:bg-blue-500 hover:text-white'}`}
      disabled={currentPage === Math.ceil(rows.length / rowsPerPage)}
      onClick={() => setCurrentPage(currentPage + 1)}
    >
      Next
-   </button>
+   </button1>
   
  </div>
 
 
- <p className="text-xl absolute bottom-0 mb-[10.5rem] mx-3.5 text-[#313e4d]" >Create New</p>
- <div className="fixed bottom-0 mx-3.5 my-10 bg-white rounded-l-lg p-2 w-2/3">
+ <p class="createnew-admin" >Create New</p>
+ <div class="admininputbox">
    <form className="flex flex-col mt-2">
      <div className="flex flex-wrap justify-between">
-       <label for="name" className="text-sm w-1/4 mt-1 text-[#313e4d]">
+       <label for="name" class="admininput-name">
          Name:
        </label>
        <input
          type="text"
          id="name"
-         className="border border-gray-400 rounded-lg py-0.5 px-2 w-3/4 mt-1 "
+         class="admininputbox-name "
          required
        />
 
-       <label for="email" className="text-sm w-1/4 mt-1 text-[#313e4d] ">
+       <label for="email" class="admininput-email ">
          Email Adress:
        </label>
        <input
          type="email"
          id="email"
-         className="border border-gray-400 rounded-lg py-0.5 px-2 w-3/4 mt-1 "
+         class="admininputbox-email "
          required
        />
 
-       <label for="hotel-admin" className="text-sm w-1/4 mt-1 text-[#313e4d]">
+       <label for="hotel-admin" class="admininput-hotel">
          Hotel-Admin:
        </label>
        <input
          type="text"
          id="hotel-admin"
-         className="border border-gray-400 rounded-lg py-0.5 px-2 w-3/4 mt-1 ml-25"
+         class="admininputbox-hotel"
          required
        />
      </div>
@@ -260,7 +262,7 @@
  </div>
  <button
        type="button"
-       className="bg-green-500 hover:bg-green-700 text-white font-medium py-0.5 px-1 rounded float-right mt-1 w-[5rem] absolute bottom-2 mx-[60%]"
+       class="admincreatebutton"
        onClick={handleAddRow}
      >
        Create
