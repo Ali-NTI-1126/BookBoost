@@ -132,7 +132,8 @@
   }
   
   .search-form {
-    display: flex;
+    display: block;
+    padding: 20px 5.5rem;
     justify-content: center;
     background-color: #fff;
     border-radius: 20px;
