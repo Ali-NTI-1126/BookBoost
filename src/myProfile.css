@@ -1,0 +1,286 @@
+.profile {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .profile form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .profile label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .profile input[type="text"],
+  .profile input[type="email"],
+  .profile input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .profile input[type="submit"],
+  .profile button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile input[type="submit"]:hover,
+  .profile button:hover {
+    background-color: #555;
+  }
+  
+  .profile .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .profile .profile-details {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .profile .profile-details p {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .profile .profile-details strong {
+    font-weight: bold;
+  }
+  
+  .profile .profile-buttons button {
+    margin-right: 10px;
+  }
+  
+  .profile .my-offers {
+    margin-top: 40px;
+  }
+  
+  .profile .my-offers h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .profile .my-offers p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .profile .my-offers a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile .my-offers a:hover {
+    background-color: #555;
+  }
+  .profile {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .profile-details p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .profile-details strong {
+    font-weight: bold;
+  }
+
+
+/* Edit profile form */
+form.edit-profile {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form.edit-profile label {
+  margin-bottom: 10px;
+}
+
+form.edit-profile input[type="text"],
+form.edit-profile input[type="email"],
+form.edit-profile input[type="password"] {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form.edit-profile button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+form.edit-profile button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+  
+  .form-group {
+    margin-bottom: 20px;
+    padding: 0.1rem 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #f2f2f2;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #7644C0;
+    background-color: #fff;
+  }
+  
+  .form-group input:hover{
+    border: 1px solid #7644C0;
+
+  }
+
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .form-buttons button {
+    background-color: #0077c2;
+    color: #fff;
+    padding: 10px;
+    max-width: 13.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .form-buttons button:hover {
+    background-color: #7644C0;
+  }
+  
+  .profile-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profile-buttons button {
+    background-color: #0077c2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .profile-buttons button:hover {
+    background-color: #7644C0;
+  }
+  
+  .my-amenities {
+    margin-top: 50px;
+  }
+  
+  .my-amenities h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .my-amenities p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .amenities {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: #7644C0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+  .amenities:hover {
+    background-color: purple;
+  }
+
+
+  

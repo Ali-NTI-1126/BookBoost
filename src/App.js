@@ -8,6 +8,8 @@ import WelcomePage from './welcomePage';
 import facility from './facility';
 import Working from './working';
 import HotelAdminPage from './hotelAdminPage';
+import PromotionalOffersForm from './offersForm';
+import ProfilePage from './myProfile';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/facility" component={facility} />
         <Route path="/welcome" component={Working} />
         <Route path="/hotel-admin" component={HotelAdminPage} />
+        <Route path="/offers" component={PromotionalOffersForm} />
+        <Route path="/myProfile" component={ProfilePage} />
         <Route path="/" component={WelcomePage} />
 
       </Switch>

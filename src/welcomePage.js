@@ -51,6 +51,7 @@ function WelcomePage() {
             <a href="#">Hotels & Destinations</a>
             <a href="#">Meetings</a>
             <a href="#">Offers</a>
+            <a href="myProfile">My Profile</a>
           </nav>
         </div>
         <div class="header-right">
@@ -112,7 +113,7 @@ function WelcomePage() {
     One of Malmö's most appealing aspects is its stunning architecture. The city features an eclectic mix of modern and traditional buildings that are sure to leave a lasting impression on visitors. Notably, the Turning Torso, one of Sweden's tallest buildings, is a fascinating and 
     </p>
   </div>
-  <div class="image">
+  <div id="image">
     <img class='recommendedImage' src={falafel} alt="Turning turso" />
   </div>
   
@@ -128,7 +129,7 @@ function WelcomePage() {
     <p>
     Visit Gothenburg in the summer of 2023 and you’ll catch Gothenburg City’s 400th anniversary celebrations from June through August – no matter when you visit, you’ll find plenty of things to do in Gothenburg, whether you’re here on a city break or about to embark on your West Coast adventure.    </p>
   </div>
-  <div class="image">
+  <div id="image">
     <img class='recommendedImage' src={shawarma} alt="Gothenborg" />
   </div>
   
@@ -146,7 +147,7 @@ function WelcomePage() {
     Stockholm is a modern hub for tech, fashion, music, ﬁlm, design, gaming, and food. A city offering exciting flavors and unique experiences.
     </p>
   </div>
-  <div class="image">
+  <div id="image">
     <img class='recommendedImage' src={kyckling} alt="Stockholm" />
   </div>
   

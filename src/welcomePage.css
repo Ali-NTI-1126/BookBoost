@@ -33,7 +33,7 @@
     margin-right: 1rem; 
     font-weight: 700;
     font-size: 1.2rem;
-    padding-left: 30px;
+    padding-left: 20px;
     padding-top: 10px;
 }
 
@@ -215,7 +215,7 @@
     flex: 1;
   }
   
-  .image {
+  #image {
     flex: 1;
     display: flex;
     justify-content: flex-end;
