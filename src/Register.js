@@ -12,7 +12,7 @@ import 'react-phone-input-2/lib/style.css';
 import { useHistory } from 'react-router-dom';
 
 
-const RegistrationForm = () => {
+  const RegistrationForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');

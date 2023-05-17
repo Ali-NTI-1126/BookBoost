@@ -68,7 +68,7 @@ function PromotionalOffersForm() {
   return (
     <div className="bg-[#d8dfe7] min-h-screen flex flex-col items-center justify-center">
 
-     <a href="https://bookboost.io">
+     <a href="/">
   <img src={logo} alt="Logo" class="formlogo" />
 </a>
 

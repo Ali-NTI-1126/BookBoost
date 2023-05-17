@@ -9,6 +9,7 @@ function Working(props) {
     async function fetchUserName() {
       const response = await fetch('http://127.0.0.1:8000/api/auth/register');
       const data = await response.json();
+      console.log(data);
       setUserName(data.name);
     }
     fetchUserName();
@@ -17,7 +18,7 @@ function Working(props) {
   return (
     <div>
     <div className="welcome-page">
-      <h1 className="welcome-heading">Welcome to BookBoost, {userName}name!</h1>
+      <h1 className="welcome-heading">Welcome to BookBoost {userName}!</h1>
       <p className="welcome-message">We're excited to help you find your perfect hotel and amenities! Here are some of the features that we offer:</p>
       <ul className="welcome-features">
         <li><i className="fas fa-check"></i> Comprehensive hotel search engine</li>

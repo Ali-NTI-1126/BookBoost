@@ -8,6 +8,7 @@ import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
 
+
 const LoginForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -56,8 +57,8 @@ const LoginForm = () => {
               window.location.href = '/facility';
               break;
             case 'guest':
-              history.push('/');
-              window.location.href = '/';
+              history.push('/myProfile');
+              window.location.href = '/myProfile';
               break;
             default:
               console.error('Invalid role');
@@ -144,5 +145,6 @@ const LoginForm = () => {
     </div>
   );
 };
+
 
 export default LoginForm;

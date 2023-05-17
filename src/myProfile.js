@@ -17,12 +17,23 @@ function ProfilePage() {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
+      [event.target.email]: event.target.value,
+      [event.target.phone]: event.target.value,
     });
   };
 
+  useEffect(() => {
+    async function fetchUserName() {
+      const response = await fetch('http://127.0.0.1:8000/api/myProfile');
+      const data = await response.json();
+      console.log(data);
+    }
+    fetchUserName();
+  }, []);
+
   const handleFormSubmit = event => {
     event.preventDefault();
-    fetch('http://127.0.0.1:8000/api/myprofile', {
+    fetch('http://127.0.0.1:8000/api/myProfile', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +55,7 @@ function ProfilePage() {
     fetch('/api/profile', {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'http://127.0.0.1:8000/api/myProfile',
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
@@ -110,8 +121,9 @@ function ProfilePage() {
               name="phone"
               defaultValue={formData.phone}
               onChange={handleFormChange}
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              //pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               required
+              max={15}
             />
           </div>
           <div className="form-group">
